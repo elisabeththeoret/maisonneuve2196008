@@ -13,7 +13,7 @@ class CreateVillesTable extends Migration {
      */
     public function up() {
         Schema::create('villes', function (Blueprint $table) {
-            $table->primary('id')->autoIncrement();
+            $table->id()->autoIncrement();
             $table->string('nom', 40);
         });
     }
