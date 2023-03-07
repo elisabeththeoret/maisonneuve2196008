@@ -9,4 +9,18 @@ class Etudiant extends Model {
 
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'nom', 
+        'adresse', 
+        'phone', 
+        'email', 
+        'naissance', 
+        'ville_id', 
+    ];
+
 }
