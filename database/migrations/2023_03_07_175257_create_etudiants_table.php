@@ -20,6 +20,7 @@ class CreateEtudiantsTable extends Migration {
             $table->string('email', 60)->unique();
             $table->date('naissance');
             $table->integer('ville_id')->foreign()->references('id')->on('villes');
+            $table->timestamps();
         });
     }
 
