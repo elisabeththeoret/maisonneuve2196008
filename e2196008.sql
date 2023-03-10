@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `maisonneuve2196008`
+-- Base de données : `e2196008`
 --
-CREATE DATABASE IF NOT EXISTS `maisonneuve2196008` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `maisonneuve2196008`;
+CREATE DATABASE IF NOT EXISTS `e2196008` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `e2196008`;
 
 -- --------------------------------------------------------
 
