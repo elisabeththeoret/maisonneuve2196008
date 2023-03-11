@@ -8,6 +8,8 @@
             <h1 class="error">404 Not Found</h1>
         </header>
         
-        <p>Oups! Une erreur s'est produite</p>
+        <section class="flex col">
+            <p>Oups! Une erreur s'est produite</p>
+        </section>
     </main>
 @endsection
