@@ -34,4 +34,4 @@ Route::post('/etudiant-create', [EtudiantController::class, 'store'])->name('etu
 Route::get('/etudiant-show/{etudiant}', [EtudiantController::class, 'show'])->name('etudiant.show');
 Route::get('/etudiant-edit/{etudiant}', [EtudiantController::class, 'edit'])->name('etudiant.edit');
 Route::put('/etudiant-edit/{etudiant}', [EtudiantController::class, 'update'])->name('etudiant.update');
-Route::delete('/etudiant-edit/{etudiant}', [EtudiantController::class, 'destroy'])->name('etudiant.delete');
+Route::delete('/etudiant-delete/{etudiant}', [EtudiantController::class, 'destroy'])->name('etudiant.delete');
