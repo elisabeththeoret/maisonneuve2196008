@@ -16,10 +16,10 @@ class EtudiantFactory extends Factory {
     public function definition() {
         return [
             'nom'       => $this->faker->name(), 
-            'adresse'   => $this->faker->streetAddress(), 
-            'phone'     => $this->faker->unique()->numerify('###-###-####'), 
-            'email'     => $this->faker->unique()->email(), 
             'naissance' => $this->faker->date('Y-m-d', '2006-12-31'), 
+            'email'     => $this->faker->unique()->email(), 
+            'phone'     => $this->faker->unique()->numerify('###-###-####'), 
+            'adresse'   => $this->faker->streetAddress(), 
             'ville_id'  => $this->faker->randomElement(Ville::pluck('id')), 
         ];
     }
