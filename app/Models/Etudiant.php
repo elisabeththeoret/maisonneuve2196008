@@ -22,10 +22,10 @@ class Etudiant extends Model {
      */
     protected $fillable = [
         'nom', 
-        'adresse', 
-        'phone', 
-        'email', 
         'naissance', 
+        'email', 
+        'phone', 
+        'adresse', 
         'ville_id', 
     ];
 
