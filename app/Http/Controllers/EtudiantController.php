@@ -17,7 +17,32 @@ class EtudiantController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        //
+        // data 
+        $etudiants = Etudiant::select(
+                'etudiants.id', 
+                'etudiants.nom', 
+                'etudiants.naissance', 
+                'etudiants.email', 
+                'etudiants.phone', 
+                'etudiants.adresse', 
+                'etudiants.ville_id', 
+                'villes.nom AS ville_nom'
+            )
+            ->rightJoin("villes", "villes.id", "ville_id")
+            ->orderBy('etudiants.nom', 'asc')
+            ->paginate(10)
+        ;
+        
+        // pages pour la navigation 
+        $last_page = $etudiants->lastPage();
+        
+        // afficher 
+        return view(
+            'etudiant.index', [
+                'etudiants' => $etudiants, 
+                'last_page' => $last_page, 
+            ]
+        );
     }
 
     /**
@@ -26,7 +51,15 @@ class EtudiantController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        //
+        // data 
+        $villes = Ville::all();
+        
+        // afficher 
+        return view(
+            'etudiant.create', [
+                'villes' => $villes, 
+            ]
+        );
     }
 
     /**
@@ -46,7 +79,28 @@ class EtudiantController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show(Etudiant $etudiant) {
-        //
+        // data 
+        $etu = Etudiant::select(
+                'etudiants.id', 
+                'etudiants.nom', 
+                'etudiants.naissance', 
+                'etudiants.email', 
+                'etudiants.phone', 
+                'etudiants.adresse', 
+                'etudiants.ville_id', 
+                'villes.nom AS ville_nom'
+            )
+            ->where('etudiants.id', $etudiant['id'])
+            ->rightJoin("villes", "villes.id", "ville_id")
+            ->get()
+        ;
+        
+        // afficher 
+        return view(
+            'etudiant.show', [
+                'etu' => $etu[0], 
+            ]
+        );
     }
 
     /**
@@ -56,7 +110,32 @@ class EtudiantController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit(Etudiant $etudiant) {
-        //
+        // data 
+        $etu = Etudiant::select(
+                'etudiants.id', 
+                'etudiants.nom', 
+                'etudiants.naissance', 
+                'etudiants.email', 
+                'etudiants.phone', 
+                'etudiants.adresse', 
+                'etudiants.ville_id', 
+                'villes.nom AS ville_nom'
+            )
+            ->where('etudiants.id', $etudiant['id'])
+            ->rightJoin("villes", "villes.id", "ville_id")
+            ->get()
+        ;
+        
+        // data 
+        $villes = Ville::all();
+        
+        // afficher 
+        return view(
+            'etudiant.edit', [
+                'etu' => $etu[0], 
+                'villes' => $villes, 
+            ]
+        );
     }
 
     /**
