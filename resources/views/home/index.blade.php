@@ -5,14 +5,26 @@
 @section('content')
     <!-- Navigation Accueil -->
     <main class="accueil col">
-        <nav class="nav flex col">
-            <a href="{{ route('etudiant') }}">Étudiants<span class="fleche">&#10095;</span></a>
-            <a href="#">Forum<span class="fleche">&#10095;</span></a>
-            <a href="#">Contact<span class="fleche">&#10095;</span></a>
+        <nav class="flex col nav">
+            <a href="{{ route('etudiant') }}" class="btn-nav">
+                Étudiants
+                <span class="fleche f-right">&#10095;</span>
+            </a>
+            <a href="#" class="btn-nav">
+                Forum
+                <span class="fleche f-right">&#10095;</span>
+            </a>
+            <a href="#" class="btn-nav">
+                Contact
+                <span class="fleche f-right">&#10095;</span>
+            </a>
         </nav>
         
-        <nav class="boutons flex col">
-            <a href="#">Mon compte<span class="fleche">&#10095;</span></a>
+        <nav class="flex col">
+            <a href="#" class="btn-compte">
+                Mon compte
+                <span class="fleche f-right">&#10095;</span>
+            </a>
         </nav>
     </main>
 @endsection

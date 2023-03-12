@@ -1,0 +1,276 @@
+/* ------------------------------ 
+GENERIQUE 
+------------------------------ */
+
+@import './variables.css';
+
+
+/******************************
+Base héritée 
+******************************/
+
+/* Typographie 
+-------------------- */
+html {
+    font-family: var(--font_courier);
+    font-size: 18px;
+    font-weight: var(--font_regular);
+    line-height: 1.5625;
+}
+
+/* Tout 
+-------------------- */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Corps 
+-------------------- */
+
+/* Base graphique */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style de base */
+body {
+    color: var(--white);
+    background-color: var(--black);
+}
+
+
+/******************************
+Typographie générique 
+******************************/
+
+/* Titres 
+-------------------- */
+
+/* Base typographique */
+h1, h3, h4 {
+    font-family: var(--font_montserrat);
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: var(--font_bold);
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--blue);
+}
+
+h2 {
+    font-size: 1.625em;
+    font-weight: var(--font_light);
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.25em;
+    font-weight: var(--font_light);
+    margin-bottom: 20px;
+}
+
+h4 {
+    color: var(--lightgrey);
+    font-size: .75em;
+    font-weight: var(--font_regular);
+    letter-spacing: 1px;
+}
+
+h4 {
+    margin-bottom: 5px;
+}
+* + h4 {
+    margin-top: 10px;
+}
+
+/* Éléments de texte 
+-------------------- */
+
+/* Petit texte */
+small {
+    color: var(--lightgrey);
+    font-family: var(--font_montserrat);
+    font-size: .75em;
+}
+
+/* Paragraphe */
+p {
+    max-width: 75ch;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* Liens */
+a {
+    max-width: max-content;
+    color: var(--blue);
+    text-decoration: none;
+    transition: 300ms ease-in-out;
+}
+
+/* Survol des liens */
+a:hover {
+    color: var(--orange);
+}
+
+/* Éléments de formulaires 
+-------------------- */
+
+/* Labels */
+label {
+    color: var(--lightgrey);
+    font-family: var(--font_montserrat);
+    font-size: .875em;
+    font-weight: var(--font_regular);
+    letter-spacing: 1px;
+}
+
+/* Inputs */
+input, 
+select, 
+textarea {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+
+/******************************
+Conteneurs génériques 
+******************************/
+
+/* Conteneur principal 
+-------------------- */
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    margin-bottom: 40px;
+    gap: 80px;
+}
+
+/* Entête de page 
+-------------------- */
+main > header {
+    gap: 40px;
+}
+
+/* Largeur majoritaire pour le titre */
+main > header h1 {
+    flex: 1;
+}
+
+/* Pied de page 
+-------------------- */
+
+/* Base graphique */
+footer {
+    margin-top: auto;
+    padding: 20px 40px;
+    align-items: flex-end;
+}
+
+/* Style de base */
+footer {
+    color: var(--grey);
+    background-color: var(--darker);
+}
+
+footer small {
+    font-size: .625em;
+}
+
+/* Form 
+-------------------- */
+
+/* Base graphique */
+form {
+    gap: 60px;
+}
+
+/* Base graphique des sous-conteneurs */
+form fieldset {
+    min-width: 400px;
+    gap: 60px;
+    border: none;
+}
+
+
+/******************************
+Éléments génériques 
+******************************/
+
+/* Image
+-------------------- */
+img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+/* Form 
+-------------------- */
+
+/* Sous-titre de form  */
+form h3 {
+    margin: 0;
+}
+
+/* Labels */
+label {
+    margin-bottom: 20px;
+}
+* + label {
+    margin-top: 40px;
+}
+
+/* Base graphique des champs */
+input, 
+select, 
+textarea {
+    flex: 1;
+    display: block;
+    padding: 10px 15px;
+}
+
+/* Style de base */
+input, 
+select, 
+textarea {
+    background-color: var(--darker);
+    border: none;
+    border-left-width: 3px;
+    border-left-style: solid;
+    border-left-color: var(--orange);
+}
+
+/* Champs en surbrillance */
+input:focus, 
+select:focus, 
+textarea:focus {
+    outline: none;
+    border-color: var(--blue);
+}
+
+/* Champs de sélection */
+select * {
+    outline: none;
+    border-left-width: 3px;
+    border-left-style: solid;
+    border-left-color: var(--orange);
+}
+
+/* Champ de texte */
+textarea {
+    height: 200px;
+    resize: none;
+    line-height: 1.5625;
+}

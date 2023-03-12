@@ -1,0 +1,28 @@
+/* ------------------------------ 
+VARIABLES 
+------------------------------ */
+
+/* Typographie
+ -------------------- */
+html {
+    --font_montserrat: 'Montserrat', sans-serif;
+    --font_courier: 'Courier New', Courier, monospace;
+}
+
+html {
+    --font_light: 200;
+    --font_regular: 400;
+    --font_bold: 600;
+}
+
+/* Couleurs 
+-------------------- */
+html {
+    --blue: #6495ed;
+    --orange: #ff7f50;
+    --white: #ffffff;
+    --lightgrey: #999999;
+    --grey: #4e4e4e;
+    --black: #272727;
+    --darker: #202020;
+}

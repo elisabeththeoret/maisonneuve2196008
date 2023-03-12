@@ -1,0 +1,399 @@
+/* ------------------------------ 
+COMPOSANTES 
+------------------------------ */
+
+/******************************
+Conteneurs spécifiques 
+******************************/
+
+/* Contexte flex 
+------------ */
+.flex {
+    display: flex;
+}
+
+/* Contexte vertical */
+.col {
+    flex-direction: column;
+}
+
+/* Contexte horizontal */
+.row {
+    flex-direction: row;
+}
+
+/* Largeur égale des sous-conteneurs */
+.egal > * {
+    flex: 1;
+}
+
+/* Contexte grille 
+------------ */
+.grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 60px 20px;
+}
+
+
+/******************************
+Éléments spécifiques 
+******************************/
+
+/* Boutons 
+------------ */
+
+/* Base graphique */
+.btn {
+    max-width: max-content;
+    padding: 15px 20px;
+}
+
+/* Style de base */
+.btn {
+    color: var(--blue);
+    background-color: inherit;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--blue);
+    transition: 300ms ease-in-out;
+}
+
+/* Style de survol */
+.btn:hover {
+    color: var(--white);
+    background-color: var(--orange);
+    border-color: var(--orange);
+    border-radius: 20vh;
+    cursor: pointer;
+}
+
+/* Bouton gris */
+.btn-grey {
+    color: var(--lightgrey);
+    border-color: var(--grey);
+}
+
+/* Style de survol */
+.btn-grey:hover {
+    background-color: var(--black);
+    border-color: var(--grey);
+}
+
+/* Style de survol */
+.btn-hover-blue:hover {
+    background-color: var(--blue);
+    border-color: var(--blue);
+}
+
+/* Flèches animées 
+------------ */
+
+/* Base graphique */
+.f-left, 
+.f-right {
+    position: absolute;
+    opacity: 0;
+    color: inherit;
+    transition: inherit;
+    pointer-events: none;
+}
+
+/* Décaler la flèche de droite */
+.f-right {
+    transform: translateX(-10px);
+}
+
+/* Style de survol des flèches */
+a:hover .f-left, 
+a:hover .f-right {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Flèche de gauche */
+a:hover .f-left {
+    transform: translateX(-10px);
+}
+
+/* Flèche de droite */
+a:hover .f-right {
+    transform: translateX(0px);
+}
+
+/* Form 
+------------ */
+
+/* Message d'erreur */
+.error small {
+    position: absolute;
+    color: var(--lightgrey);
+    margin-top: 5px;
+}
+
+
+/******************************
+Sections spécifiques 
+******************************/
+
+/* Navigations principale 
+------------ */
+
+/* Base graphique */
+.navigation-principale,
+.navigation-principale .nav-utilisateur {
+    height: 60px;
+    align-items: center;
+    background-color: var(--darker);
+}
+
+/* Base graphique */
+.navigation-principale {
+    position: sticky;
+    top: 0;
+    gap: 40px;
+    padding: 0px 40px;
+}
+
+/* Base graphique des liens */
+.navigation-principale a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Style de base des liens */
+.navigation-principale a {
+    color: var(--white);
+    background-color: inherit;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--darker);
+}
+
+/* Style de survol des liens */
+.navigation-principale a:hover {
+    border-color: var(--orange);
+}
+
+/* Nav utilisateur (Navigation principale) 
+------------ */
+
+/* Base graphique */
+.nav-utilisateur {
+    margin-left: auto;
+    gap: 20px;
+}
+
+/* Style des boutons gris relatifs à la session */
+.nav-utilisateur .btn-session {
+    color: var(--lightgrey);
+    border-bottom-width: .5px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--lightgrey);
+    padding-bottom: 1.5px;
+}
+
+/* Style de survol */
+.nav-utilisateur .btn-session:hover {
+    color: var(--blue);
+    border-color: var(--blue);
+}
+
+/* Style du bouton orange pour la page du compte */
+.nav-utilisateur .btn-compte {
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-color: var(--orange);
+}
+
+/* Style de survol */
+.nav-utilisateur .btn-compte:hover {
+    color: var(--white);
+    border-color: var(--white);
+}
+
+/* Nav Action 
+-------------------- */
+.nav-action {
+    align-items: flex-end;
+    gap: 20px;
+}
+
+/* Fil d'Ariane 
+-------------------- */
+.fil-arianne {
+    padding: 10px 40px;
+}
+
+/* Carte 
+-------------------- */
+
+/* Base graphique */
+.carte {
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+/* Style de base */
+.carte {
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: var(--grey);
+    transition: 300ms ease-in-out;
+}
+
+.carte:has(a:hover) {
+    border-color: var(--lightgrey);
+}
+
+.carte .fleche {
+    position: relative;
+    color: var(--blue);
+    font-size: 1.5em;
+    transform: translateX(-60px);
+}
+
+.carte:has(a:hover) .fleche {
+    color: var(--orange);
+    transform: translateX(-40px);
+    opacity: 1;
+}
+
+/* Accueil (Page Navigation) 
+-------------------- */
+
+/* Base graphique */
+.accueil {
+    min-height: calc(100% - 160px);
+    padding: 80px 80px;
+    justify-content: center;
+    gap: 80px;
+}
+
+.accueil nav,
+.accueil nav > .grille {
+    gap: 20px;
+}
+
+/* Grille de liens de session */
+.accueil nav > .grille {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 2));
+}
+
+@media screen and (min-width: 1600px) {
+    .accueil nav > .grille {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Base graphique des boutons */
+.accueil a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 75px;
+    max-width: unset;
+    flex: 1;
+}
+
+/* Style de base des boutons */
+.accueil a {
+    line-height: 1;
+    border-width: 1px;
+    border-style: solid;
+}
+
+/* Style des boutons de navigation bleus */
+.accueil .btn-nav {
+    color: var(--blue);
+    font-size: 2.25rem;
+    border-color: var(--blue);
+}
+
+/* Style des boutons relatifs à la session */
+.accueil .btn-compte, 
+.accueil .btn-session {
+    font-size: 1.25rem;
+}
+
+/* Style des boutons de navigation orange */
+.accueil .btn-compte {
+    color: var(--orange);
+    border-color: var(--orange);
+}
+
+/* Style des boutons de navigation gris */
+.accueil .btn-session {
+    padding: 50px 75px;
+    color: var(--lightgrey);
+    border-color: var(--lightgrey);
+}
+
+/* Flèches dans les boutons */
+.accueil .fleche {
+    margin-left: calc(100% - 200px);
+}
+
+/* Style de survol */
+.accueil a:hover .fleche {
+    margin-left: calc(100% - 170px);
+}
+
+/* Navigation de pages 
+-------------------- */
+
+/* Base graphique */
+.navigation-pages {
+    justify-content: center;
+    gap: 40px;
+    padding-top: 10px;
+}
+
+/* Style de base */
+.navigation-pages {
+    border-top-width: .5px;
+    border-top-style: solid;
+    border-top-color: var(--blue);
+}
+
+/* Base graphique des liens */
+.navigation-pages a {
+    padding: 10px;
+}
+
+/* Base graphique de la barre des numéros de pages */
+.numeros-pages {
+    flex: unset;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Base graphique des liens de numéros de pages */
+.numeros-pages a {
+    color: var(--white);
+    display: flex;
+    gap: 2px;
+    transition: 300ms ease-in-out;
+}
+
+/* Style de survol */
+.numeros-pages a:hover {
+    color: var(--orange);
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+
+/* Style pour la page active */
+.page-active {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+
+/* Style de survol pour la page active */
+.page-active:hover {
+    color: var(--white);
+}
