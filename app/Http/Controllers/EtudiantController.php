@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Etudiant;
 use App\Models\Ville;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 /**
  * Etudiant 
@@ -69,7 +70,27 @@ class EtudiantController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        //
+        // valider 
+        $request->validate( [
+            'nom' => 'required|min:2|max:50', 
+            'naissance' => 'required', 
+            'email' => 'required|email|max:60|unique:etudiants',
+            'phone' => 'required|min:6|max:20|unique:etudiants', 
+            'adresse' => 'required|max:70', 
+            'ville_id' => 'required', 
+        ] );
+        
+        // formatter 
+        $etudiant = new Etudiant;
+        $etudiant->fill($request->all());
+        
+        // sauvegarder 
+        $etudiant->save();
+        
+        // rediriger 
+        return redirect(
+            route('etudiant.show', $etudiant->id)
+        );
     }
 
     /**
@@ -146,7 +167,27 @@ class EtudiantController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Etudiant $etudiant) {
-        //
+        // valider 
+        $request->validate( [
+            Rule::unique('etudiants')->ignore($request->id, 'id'), 
+            'nom' => 'required|min:2|max:50', 
+            'naissance' => 'required', 
+            'email' => 'required|email|max:60', 
+            'phone' => 'required|min:6|max:20', 
+            'adresse' => 'required|max:70', 
+            'ville_id' => 'required', 
+        ] );
+        
+        // formatter 
+        $etudiant->fill($request->all());
+        
+        // sauvegarder 
+        $etudiant->save();
+        
+        // rediriger 
+        return redirect(
+            route('etudiant.show', $etudiant->id)
+        );
     }
 
     /**
@@ -156,7 +197,11 @@ class EtudiantController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy(Etudiant $etudiant) {
-        //
+        $etudiant->delete();
+        
+        return redirect(
+            route('etudiant')
+        );
     }
 
 }
