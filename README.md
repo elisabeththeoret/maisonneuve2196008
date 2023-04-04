@@ -1,64 +1,65 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+Maisonneuve 2196008 
+===================
+Ce site a pour but de recueillir de l’information auprès des étudiants/es. La plateforme est un réseau social qui permet de rassembler les étudiants/es et leur offrir des ressources. 
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Dans un futur, ils pourront possiblement réagir, commenter et partager les publications. De plus, une fonctionnalité pourrait éventuellement permettre la discussion par messagerie privée, que ce soit en duos, ou en groupes. 
 
-## About Laravel
+Fonctionnalités 
+---------------
+##### Général 
+Premièrement, le site sera accessible pour tous les étudiants/es. Il pourra donc être consulté autant en français qu'en anglais. 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+De plus, une page de bienvenue contenant un formulaire d'inscription ainsi qu'un formulaire de connexion accueillera les visiteurs. 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+##### Utilisateur 
+Une fois inscrit et connecté, l'étudiant aura accès à plusieurs sections du site. 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+À partir du portail de l'utilisateur (dashboard), la possibilité de mettre à jour les informations de l’étudiant/e est disponible. De plus, la possibilité de fermer le compte (suppression) d’un élève est évidemment disponible également. 
 
-## Learning Laravel
+##### Étudiants 
+Le site permettra d’afficher la liste de tous les élèves ainsi que d’afficher une page détails d’un élève voulu. De cette page, il est aussi  possible de modifier ou de supprimer l'tudiant/e.
+> _<small>Pour des raisons de sécurité, une fonction sera implémentée dans un futur proche afin de bloquer cet accès et ces permissions à tous et de seulement permettre aux administrateurs d'y accéder.</small>_ 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+##### Forum 
+Une section pour le forum sera également accessible. L'étudiant/e connecté/e peut voir tous les articles publiés par les autres membres. Cet élève peut évidemment visionner l'article dans une page afin de lire le contenu entier. 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Tout élève connecté peut rédiger, publier, mettre à jour et supprimer des articles. Par contre, seul l'étudiant/e qui a publié l'article a la permission de modifier ainsi que de supprimer celui-ci. 
 
-## Laravel Sponsors
+##### Documents 
+Finalement, une section pour les documents partagés sera également disponible. L'étudiant/e connecté/e peut voir tous ces documents et peut évidemment consulter les détails dans une page désignée à cet effet. 
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Pour les documents de type PDF, la possibilité de les visionner et de les télécharger est disponible à tous les utilisateurs. 
 
-### Premium Partners
+Tout comme les articles du forum, tout élève connecté peut téléverser, mettre à jour et supprimer des documents. Par contre, seul l'étudiant/e qui a partagé le document a la permission de modifier ainsi que de supprimer celui-ci. 
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+---
 
-## Contributing
+Installation 
+------------
+1. Une fois le dossier récupéré (`git clone`), mettre à jour le projet local : 
+```
+# composer update
+```
+2. Faire une copie du fichier `.env.example` et le nommer `.env`. 
+3. Regénérer une clé d'application `APP_KEY` : 
+```
+# php artisan key:generate
+```
+4. Créer une base de données locale : 
+```sql
+CREATE DATABASE `e2196008`;
+```
+> _<small>Par défaut, le nom donné à la base de données est `e2196008`. </small> <br> <small>En cas de changement, modifier dans le fichier `.env` à la ligne 14 `DB_DATABASE`.</small>_
+5. Migrer les tables : 
+```
+# php artisan migrate
+```
+6. Démarrer le projet : 
+```
+# php artisan serve
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+##### Lien du site 
+https://e2196008.webdev.cmaisonneuve.qc.ca/maisonneuve2196008 
