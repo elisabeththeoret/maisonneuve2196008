@@ -1,30 +1,30 @@
-@extends('layout.app')
-
-@section('title', 'Home')
+@extends('layout.app', [
+    'title' => trans('pages/home.title'), 
+])
 
 @section('content')
-    <!-- Navigation Accueil -->
+    <!-- Accueil -->
     <main class="accueil col">
-        <nav class="flex col nav">
-            <a href="{{ route('etudiant') }}" class="btn-nav">
-                Étudiants
-                <span class="fleche f-right">&#10095;</span>
-            </a>
-            <a href="#" class="btn-nav">
-                Forum
-                <span class="fleche f-right">&#10095;</span>
-            </a>
-            <a href="#" class="btn-nav">
-                Contact
-                <span class="fleche f-right">&#10095;</span>
-            </a>
-        </nav>
+        <header class="flex row">
+            <h1>{{ config('app.name') }}</h1>
+        </header>
+        
+        <section class="flex col">
+            <h2>@lang('pages/home.h2')</h2>
+            <p>@lang('pages/home.welcome_text')</p>
+        </section>
         
         <nav class="flex col">
-            <a href="#" class="btn-compte">
-                Mon compte
-                <span class="fleche f-right">&#10095;</span>
-            </a>
+            <aside class="grille">
+                <a href="{{ route('register') }}" class="btn-compte">
+                    @lang('pages/menu.register')
+                    <span class="fleche f-right">&#10095;</span>
+                </a>
+                <a href="{{ route('login') }}" class="btn-compte">
+                    @lang('pages/menu.login')
+                    <span class="fleche f-right">&#10095;</span>
+                </a>
+            </aside>
         </nav>
     </main>
 @endsection

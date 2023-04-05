@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\Localization;
+use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EtudiantController;
 
@@ -24,6 +26,11 @@ Route::get('/home', function () {
         route('home')
     );
 });
+
+/**
+ * Lang 
+ */
+Route::get('locale/{locale}', [LocalizationController::class, 'index'])->name('lang');
 
 /**
  * Etudiant 

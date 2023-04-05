@@ -397,3 +397,10 @@ Sections spécifiques
 .page-active:hover {
     color: var(--white);
 }
+
+/* Navigation de langue (pied de page) 
+-------------------- */
+.nav-locale {
+    gap: 20px;
+    text-transform: uppercase;
+}

@@ -1,19 +1,19 @@
-@extends('layout.app')
-
-@section('title', 'Étudiants')
+@extends('layout.app', [
+    'title' => trans('pages/student/index.title'), 
+])
 
 @section('content')
     <main>
         <header class="flex row">
-            <h1>Nos étudiants</h1>
+            <h1>@lang('pages/student/index.h1')</h1>
             
             <nav class="flex row nav-action">
-                <!-- Ajouter -->
-                <a class="btn" href="{{ route('etudiant.create') }}">Ajouter</a>
+                <!-- Create -->
+                <a class="btn" href="{{ route('etudiant.create') }}">@lang('pages/student/index.create_button')</a>
             </nav>
         </header>
         
-        <!-- Liste -->
+        <!-- List -->
         <section class="grille">
             @forelse ($etudiants as $etu)
             <article class="flex row carte">
@@ -22,36 +22,37 @@
                         <h2>{{ $etu->nom }}</h2>
                     </a>
                     
-                    <h4>Date de naissance</h4>
+                    <h4>@lang('form.label_birthday')</h4>
                     <p>{{ $etu->naissance }}</p>
                     
-                    <h4>Courriel</h4>
+                    <h4>@lang('form.label_email')</h4>
                     <p>{{ $etu->email }}</p>
                     
-                    <h4>Phone</h4>
+                    <h4>@lang('form.label_phone')</h4>
                     <p>{{ $etu->phone }}</p>
                     
-                    <h4>Adresse</h4>
+                    <h4>@lang('form.label_address')</h4>
                     <p>{{ $etu->adresse }}</p>
                     
-                    <h4>Ville</h4>
+                    <h4>@lang('form.label_city')</h4>
                     <p>{{ $etu->ville_nom }}</p>
                 </div>
                 
                 <span class="fleche f-right">&#10095;</span>
             </article>
             @empty
-                <p>Aucun étudiant disponible...</p>
+                <p>@lang('pages/student/index.no_data')</p>
             @endforelse
         </section>
         
+        <!-- Pagination -->
         <nav class="flex row navigation-pages">
             <a href="{{ $etudiants->previousPageUrl() }}">
                 <span class="f-left">&#10094;</span>
                 <span class="fleche">&#10094;</span>
             </a>
             <div class="flex row egal numeros-pages">
-                @for ($page = 1; $page <= $last_page; $page++)
+                @for ($page = 1; $page <= $nb_pages; $page++)
                     <a href="{{ $etudiants->url($page) }}" @class(['page-active' => $etudiants->currentPage() == $page])>{{ $page }}</a>
                 @endfor
             </div>

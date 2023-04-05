@@ -35,13 +35,13 @@ class EtudiantController extends Controller {
         ;
         
         // pages pour la navigation 
-        $last_page = $etudiants->lastPage();
+        $nb_pages = $etudiants->lastPage();
         
         // afficher 
         return view(
             'etudiant.index', [
                 'etudiants' => $etudiants, 
-                'last_page' => $last_page, 
+                'nb_pages' => $nb_pages, 
             ]
         );
     }
@@ -75,7 +75,7 @@ class EtudiantController extends Controller {
             'nom' => 'required|min:2|max:50', 
             'naissance' => 'required', 
             'email' => 'required|email|max:60|unique:etudiants',
-            'phone' => 'required|min:6|max:20|unique:etudiants', 
+            'phone' => 'required|min:6|max:20|unique:etudiants|regex:/^[\d\s\-]+$/', 
             'adresse' => 'required|max:70', 
             'ville_id' => 'required', 
         ] );

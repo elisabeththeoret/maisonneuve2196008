@@ -1,15 +1,15 @@
-@extends('layout.app')
-
-@section('title', 'Error 404')
+@extends('layout.app', [
+    'title' => trans('pages/404.title'), 
+])
 
 @section('content')
     <main>
         <header class="flex row">
-            <h1 class="error">404 Not Found</h1>
+            <h1 class="error">@lang('pages/404.h1')</h1>
         </header>
         
         <section class="flex col">
-            <p>Oups! Une erreur s'est produite</p>
+            <p>@lang('pages/404.text')</p>
         </section>
     </main>
 @endsection

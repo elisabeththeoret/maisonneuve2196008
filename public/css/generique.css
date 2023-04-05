@@ -176,7 +176,8 @@ main > header h1 {
 footer {
     margin-top: auto;
     padding: 20px 40px;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: space-between;
 }
 
 /* Style de base */
