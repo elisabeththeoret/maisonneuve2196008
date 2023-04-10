@@ -16,35 +16,35 @@
             
             <fieldset class="flex row egal">
                 <div class="flex col">
-                    <label for="nom">@lang('form.label_name')*</label>
-                    <input type="text" name="nom" id="nom" value="{{ old('nom') }}">
-                    <p class="error">@if ($errors->has('nom'))
-                        <small>{{ $errors->first('nom') }}</small>
+                    <label for="name">@lang('form.label_name')*</label>
+                    <input type="text" name="name" id="name" value="{{ old('name') }}">
+                    <p class="error">@if ($errors->has('name'))
+                        <small>{{ $errors->first('name') }}</small>
                     @endif</p>
                     
-                    <label for="adresse">@lang('form.label_address')*</label>
-                    <input type="text" name="adresse" id="adresse" value="{{ old('adresse') }}">
-                    <p class="error">@if ($errors->has('adresse'))
-                        <small>{{ $errors->first('adresse') }}</small>
+                    <label for="address">@lang('form.label_address')*</label>
+                    <input type="text" name="address" id="address" value="{{ old('address') }}">
+                    <p class="error">@if ($errors->has('address'))
+                        <small>{{ $errors->first('address') }}</small>
                     @endif</p>
                     
-                    <label for="ville">@lang('form.label_city')*</label>
-                    <select name="ville_id" id="ville">
+                    <label for="city">@lang('form.label_city')*</label>
+                    <select name="city_id" id="city">
                         <option value="">@lang('form.label_select_default_option')</option>
-                        @foreach ($villes as $ville)
-                        <option value="{{ $ville->id }}" @if ($ville->id == old('ville_id')) selected @endif>{{ $ville->nom }}</option>
+                        @foreach ($cities as $city)
+                        <option value="{{ $city->id }}" @if ($city->id == old('city_id')) selected @endif>{{ $city->name }}</option>
                         @endforeach
                     </select>
-                    <p class="error">@if ($errors->has('ville_id'))
-                        <small>{{ $errors->first('ville_id') }}</small>
+                    <p class="error">@if ($errors->has('city_id'))
+                        <small>{{ $errors->first('city_id') }}</small>
                     @endif</p>
                 </div>
                 
                 <div class="flex col">
-                    <label for="naissance">@lang('form.label_birthday')*</label>
-                    <input type="date" name="naissance" id="naissance" value="{{ old('naissance') }}">
-                    <p class="error">@if ($errors->has('naissance'))
-                        <small>{{ $errors->first('naissance') }}</small>
+                    <label for="birthday">@lang('form.label_birthday')*</label>
+                    <input type="date" name="birthday" id="birthday" value="{{ old('birthday') }}">
+                    <p class="error">@if ($errors->has('birthday'))
+                        <small>{{ $errors->first('birthday') }}</small>
                     @endif</p>
                     
                     <label for="email">@lang('form.label_email')*</label>
@@ -63,7 +63,7 @@
             
             <nav class="flex row nav-action">
                 <!-- Cancel -->
-                <a class="btn btn-grey" href="{{ route('etudiant') }}">@lang('pages/student/create.cancel_button')</a>
+                <a class="btn btn-grey" href="{{ route('student') }}">@lang('pages/student/create.cancel_button')</a>
                 
                 <!-- Create -->
                 <input type="submit" class="btn" value="@lang('pages/student/create.create_submit')">

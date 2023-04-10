@@ -15,16 +15,23 @@
         </section>
         
         <nav class="flex col">
-            <aside class="grille">
-                <a href="{{ route('register') }}" class="btn-compte">
-                    @lang('pages/menu.register')
+            @guest
+                <aside class="grille">
+                    <a href="{{ route('register') }}" class="btn-compte">
+                        @lang('pages/menu.register')
+                        <span class="fleche f-right">&#10095;</span>
+                    </a>
+                    <a href="{{ route('login') }}" class="btn-compte">
+                        @lang('pages/menu.login')
+                        <span class="fleche f-right">&#10095;</span>
+                    </a>
+                </aside>
+            @else
+                <a href="{{ route('dashboard') }}" class="btn-compte">
+                    {{ Auth::user()->name }}
                     <span class="fleche f-right">&#10095;</span>
                 </a>
-                <a href="{{ route('login') }}" class="btn-compte">
-                    @lang('pages/menu.login')
-                    <span class="fleche f-right">&#10095;</span>
-                </a>
-            </aside>
+            @endguest
         </nav>
     </main>
 @endsection

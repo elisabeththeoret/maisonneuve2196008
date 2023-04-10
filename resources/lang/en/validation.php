@@ -159,14 +159,13 @@ return [
     */
 
     'attributes' => [
-        // User & Etudiant
-        'nom'                   => "name",
+        // User & Etudiant 
         'name'                  => "name",
         'email'                 => "email address",
         'phone'                 => "phone",
-        'adresse'               => "address",
-        'ville_id'              => "city",
-        'naissance'             => "date of birth",
+        'address'               => "address",
+        'city_id'               => "city",
+        'birthday'              => "date of birth",
         'password'              => "password",
         'password_confirmation' => "password confirmation",
         // Post
@@ -178,6 +177,7 @@ return [
         'file'                  => "file",
         'description'           => "description",
         'type'                  => "type",
+        'extension'             => "extension",
         'size'                  => "size",
 
         // Generic

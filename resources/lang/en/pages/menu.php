@@ -21,8 +21,8 @@ return [
     'login' => "Login",
     'logout' => "Logout",
     'user_infos' => "My infos",
-    'user_posts' => "My posts",
-    'user_documents' => "My documents",
+    'myPosts' => "My posts",
+    'myDocuments' => "My documents",
     'back' => "Go Back",
 
 ];

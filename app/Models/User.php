@@ -48,4 +48,27 @@ class User extends Authenticatable {
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * Select student from user
+     */
+    public function student() {
+        return $this->hasOne(Student::class);
+    }
+
+    /**
+     * Select city from user (student).
+     */
+    public function city() {
+        return $this->student->city();
+    }
+
+    /**
+     * Select all posts from user (student).
+     * 
+     * @source https://laravel.com/docs/8.x/eloquent-relationships#has-many-through
+     */
+    public function myPosts() {
+        return $this->hasManyThrough(Post::class, Student::class);
+    }
+
 }

@@ -142,14 +142,13 @@ return [
     */
 
     'attributes' => [
-        // User & Etudiant
-        'nom'                   => "nom",
+        // User & Student
         'name'                  => "nom",
         'email'                 => "adresse courriel",
         'phone'                 => "téléphone",
-        'adresse'               => "adresse",
-        'ville_id'              => "ville",
-        'naissance'             => "date de naissance",
+        'address'               => "adresse",
+        'city_id'               => "ville",
+        'birthday'              => "date de naissance",
         'password'              => "mot de passe",
         'password_confirmation' => "confirmation du mot de passe",
         // Post
@@ -161,6 +160,7 @@ return [
         'file'                  => "fichier",
         'description'           => "description",
         'type'                  => "type",
+        'extension'             => "extension",
         'size'                  => "taille",
 
         // Generic

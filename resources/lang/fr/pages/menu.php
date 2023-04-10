@@ -21,8 +21,8 @@ return [
     'login' => "Connexion",
     'logout' => "Déconnexion",
     'user_infos' => "Mes infos",
-    'user_posts' => "Mes articles",
-    'user_documents' => "Mes documents",
+    'myPosts' => "Mes articles",
+    'myDocuments' => "Mes documents",
     'back' => "Retour",
 
 ];

@@ -3,9 +3,9 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Ville;
+use App\Models\City;
 
-class VilleFactory extends Factory {
+class CityFactory extends Factory {
 
     /**
      * Define the model's default state.
@@ -14,7 +14,7 @@ class VilleFactory extends Factory {
      */
     public function definition() {
         return [
-            'nom' => $this->faker->city(), 
+            'name' => $this->faker->city(), 
         ];
     }
 

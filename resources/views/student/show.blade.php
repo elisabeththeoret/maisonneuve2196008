@@ -1,11 +1,11 @@
 @extends('layout.app', [
-    'title' => $etu->nom, 
+    'title' => $stu->name, 
 ])
 
 @section('content')
     <!-- Go Back -->
     <nav class="fil-arianne">
-        <a href="{{ route('etudiant') }}">
+        <a href="{{ route('student') }}">
             <span class="fleche f-left">&#10094;</span>
             <span class="fleche">&#10094;</span>
             @lang('pages/menu.back')
@@ -14,14 +14,14 @@
     
     <main>
         <header class="flex row">
-            <h1>{{ $etu->nom }}</h1>
+            <h1>{{ $stu->name }}</h1>
             
             <nav class="flex row nav-action">
                 <!-- Edit -->
-                <a class="btn" href="{{ route('etudiant.edit', $etu->id) }}">@lang('pages/student/show.edit_button')</a>
+                <a class="btn" href="{{ route('student.edit', $stu->id) }}">@lang('pages/student/show.edit_button')</a>
                 
                 <!-- Delete -->
-                <form action="{{ route('etudiant.delete', $etu->id) }}" method="post">
+                <form action="{{ route('student.delete', $stu->id) }}" method="post">
                     @csrf
                     @method('DELETE')
                     
@@ -37,23 +37,23 @@
                     <h3>@lang('pages/student/show.infos_h3')</h3>
                     
                     <h4>@lang('form.label_birthday')</h4>
-                    <p>{{ $etu->naissance }}</p>
+                    <p>{{ $stu->birthday }}</p>
                     
                     <h4>@lang('form.label_address')</h4>
-                    <p>{{ $etu->adresse }}</p>
+                    <p>{{ $stu->address }}</p>
                     
                     <h4>@lang('form.label_city')</h4>
-                    <p>{{ $etu->ville_nom }}</p>
+                    <p>{{ $stu->city_name }}</p>
                 </div>
                 
                 <div>
                     <h3>@lang('pages/student/show.contact_h3')</h3>
                     
                     <h4>@lang('form.label_email')</h4>
-                    <p>{{ $etu->email }}</p>
+                    <p>{{ $stu->email }}</p>
                     
                     <h4>@lang('form.label_phone')</h4>
-                    <p>{{ $etu->phone }}</p>
+                    <p>{{ $stu->phone }}</p>
                 </div>
             </article>
         </section>

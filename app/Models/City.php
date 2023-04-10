@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Etudiant 
+ * City 
  * 
- * Table Name:    etudiants 
+ * Table Name:    cities 
  * Primary Key:   id 
  */
-class Etudiant extends Model {
+class City extends Model {
 
     use HasFactory;
 
@@ -21,12 +21,7 @@ class Etudiant extends Model {
      * @var array<int, string>
      */
     protected $fillable = [
-        'nom', 
-        'naissance', 
-        'email', 
-        'phone', 
-        'adresse', 
-        'ville_id', 
+        'name', 
     ];
 
 }
