@@ -63,3 +63,7 @@ CREATE DATABASE `e2196008`;
 
 ##### Lien du site 
 https://e2196008.webdev.cmaisonneuve.qc.ca/maisonneuve2196008 
+
+##### Connexion utilisateur 
+Username:  peter@gmail.com
+Password:  123456
